@@ -83,7 +83,10 @@ function createProductItem(productData, index) {
 
   // Get the product price information
   const priceNode = productData?.variants?.edges?.[0]?.node?.priceV2;
-  priceNode && createAndAppend('p', `${getCurrencySymbol(priceNode.currencyCode)}${priceNode.amount}`, productItem, 'product-price');
+  if (priceNode) {
+    const formattedPrice = `${getCurrencySymbol(priceNode.currencyCode)}${parseFloat(priceNode.amount).toFixed(2)}`;
+    createAndAppend('p', formattedPrice, productItem, 'product-price');
+  }
 
   // Create a "Shop Now" button and append it to the product item
   const shopNowButton = createAndAppend('button', 'Shop Now', productItem, 'product-button');
