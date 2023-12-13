@@ -34,3 +34,37 @@ const graphqlQuery = `
     }
   }
 `;
+
+// Configure the request options 
+const requestOptions = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': accessToken,
+    },
+    body: JSON.stringify({ query: graphqlQuery }),
+};
+
+// Function to get the currency symbol based on the currency code 
+function getCurrencySymbol(currencyCode) {
+    const CurrencySymbols = {
+        USD: '$',
+        GBP: '£',
+    };
+    return CurrencySymbols[currencyCode] || currencyCode;
+}
+
+// Function to create and append HTML elements 
+function createAndAppend(tag, content, parent) {
+    const element = document.createElement(tag);
+    element.innerHTML = content;
+    parent.appendChild(element);
+}
+
+// Function to navigate to the product page after clicking on the Shop Now button 
+function navigateToProduct(handle) {
+    // Construct the product URL based on the handle of the product 
+    const productUrl = 'https://uwp-test-store.myshopify.com/products/${handle}';
+    // Navigate to the clicked on product URL 
+    window.location.href = productUrl;
+}
