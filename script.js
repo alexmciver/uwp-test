@@ -1,3 +1,5 @@
+
+
 // Define the API URL and access token
 const apiUrl = 'https://uwp-test-store.myshopify.com/api/2021-04/graphql.json';
 const accessToken = '250fac1f178f733cd0b26fe7656e364d';
@@ -10,6 +12,7 @@ const graphqlQuery = `
         node {
           id
           title
+          descriptionHtml
           handle
           tags
           variants(first: 1) {
@@ -50,14 +53,18 @@ function getCurrencySymbol(currencyCode) {
   const currencySymbols = {
     USD: '$',
     GBP: '£',
+    // Add more currencies as needed
   };
   return currencySymbols[currencyCode] || currencyCode;
 }
 
-// Function to create and append HTML elements
-function createAndAppend(tag, content, parent) {
+// Function to create and append HTML elements with a unique class
+function createAndAppend(tag, content, parent, className) {
   const element = document.createElement(tag);
   element.innerHTML = content;
+  if (className) {
+    element.className = className;
+  }
   parent.appendChild(element);
 }
 
@@ -77,8 +84,10 @@ fetch(apiUrl, requestOptions)
     const productContainer = document.getElementById('product-container');
 
     // Iterate through the products and create HTML elements for each
-    data?.products?.edges?.forEach(({ node }) => {
+    data?.products?.edges?.forEach(({ node }, index) => {
       const productElement = document.createElement('div');
+      const uniqueClassName = `product-item-${index + 1}`; // Unique class name like 'product-item-1', 'product-item-2', etc.
+      productElement.className = uniqueClassName;
 
       // Check if there is an image, and if so, create an image element
       const imageSrc = node?.images?.edges?.[0]?.node?.originalSrc;
@@ -90,7 +99,7 @@ fetch(apiUrl, requestOptions)
       // Display product tags if available
       const tags = node?.tags;
       if (tags && tags.length > 0) {
-        createAndAppend('p', `${tags.join(', ')}`, productElement);
+        createAndAppend('p', `Tags: ${tags.join(', ')}`, productElement);
       }
 
       createAndAppend('h1', node?.title, productElement);
@@ -116,3 +125,4 @@ fetch(apiUrl, requestOptions)
     });
   })
   .catch(error => console.error('Error fetching data:', error));
+
