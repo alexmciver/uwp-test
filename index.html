@@ -3,11 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UWP Shopify Test</title>
+    <title>Shopify Products</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="product-container"></div>    
+
+    <div id="product-container">
+        <!-- Product 1 -->
+        <div class="product-item" id="product-item-1">
+            <div class="product-image">
+                <img src="" alt="Product Image 1">
+            </div>
+            <p class="product-tags"></p>
+            <h1 class="product-title"></h1>
+            <p class="product-price"></p>
+            <div class="product-button">
+                <button onclick="navigateToProduct('product-handle-1')">Shop Now</button>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-item" id="product-item-2">
+            <div class="product-image">
+                <img src="" alt="Product Image 2">
+            </div>
+            <p class="product-tags"></p>
+            <h1 class="product-title"></h1>
+            <p class="product-price"></p>
+            <div class="product-button">
+                <button onclick="navigateToProduct('product-handle-2')">Shop Now</button>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-item" id="product-item-3">
+            <div class="product-image">
+                <img src="" alt="Product Image 3">
+            </div>
+            <p class="product-tags"></p>
+            <h1 class="product-title"></h1>
+            <p class="product-price"></p>
+            <div class="product-button">
+                <button onclick="navigateToProduct('product-handle-3')">Shop Now</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
