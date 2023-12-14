@@ -2,8 +2,8 @@
 document.addEventListener('DOMContentLoaded', fetchDataAndPopulate);
 // Function to fetch data from Shopify API and populate the product container
 function fetchDataAndPopulate() {
-  const apiUrl = 'https://uwp-test-store.myshopify.com/api/2021-04/graphql.json';
-  const accessToken = '250fac1f178f733cd0b26fe7656e364d';
+  const apiUrl = 'https://8287c8-2.myshopify.com/api/2021-04/graphql.json';
+  const accessToken = '55b428edf3d7f0f1d2dbbc167c25fbc2';
 
   // GraphQL query to retrieve product information
   const graphqlQuery = `{ 
@@ -107,7 +107,7 @@ function getCurrencySymbol(currencyCode) {
 
 // Function to navigate to the product details page
 function navigateToProduct(handle) {
-  window.location.href = `https://uwp-test-store.myshopify.com/products/${handle}`;
+  window.location.href = `https://8287c8-2.myshopify.com/products/${handle}`;
 }
 
 // Function to create and append an HTML element to a parent element

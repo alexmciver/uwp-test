@@ -30,11 +30,12 @@
   
   .product-image {
     max-width: 261px;
-    max-height: 324px;
+    max-height: 285px;
   }
   
   .product-image img {
     width: 100%;
+    object-fit: contain;
     height: 100%;
   }
   
