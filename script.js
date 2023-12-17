@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', fetchDataAndPopulate);
 // Function to fetch data from Shopify API and populate the product container
 function fetchDataAndPopulate() {
-  const apiUrl = 'https://8287c8-2.myshopify.com/api/2021-04/graphql.json';
+  const apiUrl = 'https://cab6a1-3.myshopify.com/api/2021-04/graphql.json';
   const accessToken = '55b428edf3d7f0f1d2dbbc167c25fbc2';
 
   // GraphQL query to retrieve product information
@@ -107,7 +107,7 @@ function getCurrencySymbol(currencyCode) {
 
 // Function to navigate to the product details page
 function navigateToProduct(handle) {
-  window.location.href = `https://8287c8-2.myshopify.com/products/${handle}`;
+  window.location.href = `https://cab6a1-3.myshopify.com/products/${handle}`;
 }
 
 // Function to create and append an HTML element to a parent element
