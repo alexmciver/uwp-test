@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', fetchDataAndPopulate);
 // Function to fetch data from Shopify API and populate the product container
 function fetchDataAndPopulate() {
   const apiUrl = 'https://cab6a1-3.myshopify.com/api/2021-04/graphql.json';
-  const accessToken = '55b428edf3d7f0f1d2dbbc167c25fbc2';
+  const accessToken = '621dcf8f7b5b7ea59d1f39108f3b495a';
 
   // GraphQL query to retrieve product information
   const graphqlQuery = `{ 
